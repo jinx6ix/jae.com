@@ -38,8 +38,9 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: "your-google-site-verification",
-    yandex: "your-yandex-verification",
+    google: "IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U",
+    yandex: "b585127e41b6a92f",
+    yahoo: "750BAD767F0FB4E4100952EBD7883CEE",
     // bing removed — not supported in Next.js Metadata
   },
   alternates: {
@@ -69,13 +70,13 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@jaetravel",
     creator: "@jaetravel",
-    title: "Jae Travel Expeditions - East African Safaris",
+    title: "JaeTravel Expeditions - East African Safaris",
     description: "Book your perfect safari in Kenya, Tanzania, Rwanda or Uganda. Expert guides, 4x4 vehicles, luxury lodges.",
     images: ["/twitter-home.jpg"],
   },
   appleWebApp: {
     capable: true,
-    title: "Jae Travel",
+    title: "JaeTravel Expeditions",
     statusBarStyle: "black-translucent",
   },
   icons: {
@@ -170,7 +171,7 @@ export default function RootLayout({
 
         {/* Google Analytics - Fixed with next/script */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          src="https://www.googletagmanager.com/gtag/js?id=G-Q6Y2Y3PSXH"
           strategy="afterInteractive"
         />
         <Script id="gtag-init" strategy="afterInteractive">
@@ -178,7 +179,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX', { 
+            gtag('config', 'G-Q6Y2Y3PSXH', { 
               page_path: window.location.pathname,
               transport_type: 'beacon'
             });
