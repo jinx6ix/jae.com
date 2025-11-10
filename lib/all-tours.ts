@@ -1,3 +1,17 @@
+// lib/all-tours.ts
+// lib/all-tours.ts
+export type TourCategory =
+  | "Safari"
+  | "Trekking"
+  | "Cultural"
+  | "Beach"
+  | "Adventure"
+  | "Luxury"
+  | "Budget"
+  | "Accessible"
+
+export type AccessibleCountry = "Kenya" | "Tanzania" | "Rwanda" | "Uganda" | "Multi-Country"
+
 export interface Tour {
   id: string
   slug: string
@@ -14,7 +28,7 @@ export interface Tour {
   difficulty: string
   url: string
   region: string
-  country: "Kenya" | "Tanzania" | "Rwanda" | "Uganda" | "Multi-Country"
+  country: AccessibleCountry
   highlights: string[]
   included: string[]
   excluded: string[]
@@ -28,18 +42,24 @@ export interface Tour {
   metaTitle: string
   metaDescription: string
   keywords: string[]
-  category: "Safari" | "Trekking" | "Cultural" | "Beach" | "Adventure" | "Luxury" | "Budget" | "Accessible"
+  category: TourCategory
   isPopular?: boolean
   isOnOffer?: boolean
   bestFor?: string[]
   bookingUrl: string
 
-  // 👇 Add these to fix the type mismatch
+  // Optional
   featured?: boolean
   name?: string
   destinations?: string[]
-  bestTime?: string []
+  bestTime?: string[]
   priceFrom?: number
+
+  // Accessibility
+  accessibilityFeatures?: string[]
+  adaptedVehicle?: string
+  wheelchairAccessible?: boolean
+  mobilityRequirements?: string
 }
 
 export const tours: Tour[] = [

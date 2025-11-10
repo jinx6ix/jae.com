@@ -11,6 +11,13 @@ export interface TourSchemaData {
   destination?: string
   rating?: number
   reviewCount?: number
+  offers?: {
+    "@type": "Offer"
+    price: number
+    priceCurrency: string
+    availability: string
+    url: string
+  }
 }
 
 export interface OrganizationSchemaData {

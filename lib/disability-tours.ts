@@ -1,4 +1,7 @@
+import type { AccessibleCountry } from "@/lib/types"
+
 export interface AccessibleTour {
+  excluded: string[]
   id: string
   slug: string
   title: string
@@ -13,7 +16,7 @@ export interface AccessibleTour {
   mobilityRequirements: string
   duration: string
   groupSize: string
-  country: string
+  country: AccessibleCountry
   highlights: string[]
   included: string[]
   itinerary: Array<{
@@ -35,8 +38,7 @@ export const accessibleTours: AccessibleTour[] = [
     id: "acc-1",
     slug: "accessible-kenya-safari-experience",
     title: "Accessible Kenya Safari Experience",
-    description:
-      "A fully accessible safari experience designed for travelers with mobility challenges. Features wheelchair-accessible vehicles, accessible accommodations, accessible restrooms, trained guides for special needs, and tailored wildlife viewing to ensure everyone can enjoy East Africa's magnificent landscapes and wildlife.",
+    description: "A fully accessible safari experience designed for travelers with mobility challenges. Features wheelchair-accessible vehicles, accessible accommodations, accessible restrooms, trained guides for special needs, and tailored wildlife viewing to ensure everyone can enjoy East Africa's magnificent landscapes and wildlife.",
     shortDescription: "Fully accessible safari for people with mobility challenges",
     price: 2450,
     currency: "USD",
@@ -77,32 +79,27 @@ export const accessibleTours: AccessibleTour[] = [
       {
         day: 1,
         title: "Arrival and Accessible Lodging",
-        description:
-          "Arrive at accessible lodge in Nairobi. Full orientation with accessibility staff. Meet your accessibility specialist guide.",
+        description: "Arrive at accessible lodge in Nairobi. Full orientation with accessibility staff. Meet your accessibility specialist guide.",
       },
       {
         day: 2,
         title: "Masai Mara Access Tour",
-        description:
-          "Drive to Masai Mara in wheelchair-accessible vehicle. Afternoon game drive with adapted viewing platform. Accessible dinner.",
+        description: "Drive to Masai Mara in wheelchair-accessible vehicle. Afternoon game drive with adapted viewing platform. Accessible dinner.",
       },
       {
         day: 3,
         title: "Full Day Accessible Safari",
-        description:
-          "Morning and afternoon game drives with frequent rest breaks. Accessible lunch stop. Wildlife viewing from adapted platforms.",
+        description: "Morning and afternoon game drives with frequent rest breaks. Accessible lunch stop. Wildlife viewing from adapted platforms.",
       },
       {
         day: 4,
         title: "Cultural Visit - Accessible",
-        description:
-          "Visit accessible Maasai village. Cultural presentation brought to your viewing area. Accessible dining experience.",
+        description: "Visit accessible Maasai village. Cultural presentation brought to your viewing area. Accessible dining experience.",
       },
       {
         day: 5,
         title: "Optional Activities",
-        description:
-          "Choose from accessible activities: photography sessions, nature appreciation, or relaxation at lodge.",
+        description: "Choose from accessible activities: photography sessions, nature appreciation, or relaxation at lodge.",
       },
       {
         day: 6,
@@ -118,8 +115,7 @@ export const accessibleTours: AccessibleTour[] = [
     rating: 4.8,
     reviewCount: 42,
     metaTitle: "Accessible Kenya Safari Experience for People with Disabilities | Jae Travel",
-    metaDescription:
-      "Book fully accessible Kenya safari with wheelchair-accessible vehicles, adapted lodges, and trained guides. Perfect for travelers with mobility challenges.",
+    metaDescription: "Book fully accessible Kenya safari with wheelchair-accessible vehicles, adapted lodges, and trained guides. Perfect for travelers with mobility challenges.",
     keywords: [
       "accessible kenya safari",
       "disability tours kenya",
@@ -143,13 +139,15 @@ export const accessibleTours: AccessibleTour[] = [
       "People with disabilities",
       "Families with special needs",
     ],
+    excluded: [
+      
+    ]
   },
   {
     id: "acc-2",
     slug: "accessible-masai-mara-experience",
     title: "4-Day Accessible Masai Mara Experience",
-    description:
-      "A focused accessible safari in the Masai Mara with wheelchair-adapted vehicles, accessible tented camps, accessible restrooms, trained disability guides, and front-row seats to the Great Migration - specially designed so people with mobility challenges can fully experience Africa's most iconic wildlife spectacle.",
+    description: "A focused accessible safari in the Masai Mara with wheelchair-adapted vehicles, accessible tented camps, accessible restrooms, trained disability guides, and front-row seats to the Great Migration - specially designed so people with mobility challenges can fully experience Africa's most iconic wildlife spectacle.",
     shortDescription: "Adapted 4-day Masai Mara safari for accessibility",
     price: 1450,
     currency: "USD",
@@ -191,20 +189,17 @@ export const accessibleTours: AccessibleTour[] = [
       {
         day: 1,
         title: "Arrival at Accessible Camp",
-        description:
-          "Transfer to accessible Masai Mara camp. Orientation with accessibility staff. First accessible game drive.",
+        description: "Transfer to accessible Masai Mara camp. Orientation with accessibility staff. First accessible game drive.",
       },
       {
         day: 2,
         title: "Migration Tracking - Adapted",
-        description:
-          "Full day adapted safari tracking the Great Migration. Multiple rest stops. Accessible lunch and viewing platform.",
+        description: "Full day adapted safari tracking the Great Migration. Multiple rest stops. Accessible lunch and viewing platform.",
       },
       {
         day: 3,
         title: "Prime Wildlife Viewing",
-        description:
-          "Exclusive game drive times with accessible vehicles. Professional photography assistance. Accessible facilities.",
+        description: "Exclusive game drive times with accessible vehicles. Professional photography assistance. Accessible facilities.",
       },
       {
         day: 4,
@@ -215,8 +210,7 @@ export const accessibleTours: AccessibleTour[] = [
     rating: 4.9,
     reviewCount: 38,
     metaTitle: "Accessible Masai Mara Safari 4 Days | Wheelchair Friendly | Jae Travel",
-    metaDescription:
-      "Book accessible Masai Mara safari with wheelchair-adapted vehicles and tented camps. Experience the Great Migration with disability support.",
+    metaDescription: "Book accessible Masai Mara safari with wheelchair-adapted vehicles and tented camps. Experience the Great Migration with disability support.",
     keywords: [
       "accessible masai mara safari",
       "wheelchair safari",
@@ -234,13 +228,13 @@ export const accessibleTours: AccessibleTour[] = [
       "barrier free safari experience",
       "accessible great migration",
     ],
+    excluded: []
   },
   {
     id: "acc-3",
     slug: "tanzania-accessible-safari-adventure",
     title: "Tanzania Accessible Safari Adventure",
-    description:
-      "An inclusive journey through Tanzania's Serengeti and Ngorongoro Crater with adapted safari vehicles, accessible lodges, trained accessibility guides, accessible transportation, and inclusive dining. Designed so travelers with disabilities can experience Tanzania's most spectacular destinations.",
+    description: "An inclusive journey through Tanzania's Serengeti and Ngorongoro Crater with adapted safari vehicles, accessible lodges, trained accessibility guides, accessible transportation, and inclusive dining. Designed so travelers with disabilities can experience Tanzania's most spectacular destinations.",
     shortDescription: "Accessible 8-day Tanzania safari adventure",
     price: 2950,
     currency: "USD",
@@ -308,8 +302,7 @@ export const accessibleTours: AccessibleTour[] = [
       {
         day: 6,
         title: "Ngorongoro Crater Access",
-        description:
-          "Accessible crater rim views and accessible descent for those able. Wildlife from adapted platform.",
+        description: "Accessible crater rim views and accessible descent for those able. Wildlife from adapted platform.",
       },
       {
         day: 7,
@@ -325,8 +318,7 @@ export const accessibleTours: AccessibleTour[] = [
     rating: 4.7,
     reviewCount: 29,
     metaTitle: "Tanzania Accessible Safari Adventure | Serengeti & Ngorongoro | Jae Travel",
-    metaDescription:
-      "Book accessible Tanzania safari through Serengeti and Ngorongoro Crater. Wheelchair-adapted vehicles, accessible lodges, and trained guides.",
+    metaDescription: "Book accessible Tanzania safari through Serengeti and Ngorongoro Crater. Wheelchair-adapted vehicles, accessible lodges, and trained guides.",
     keywords: [
       "accessible tanzania safari",
       "disability travel tanzania",
@@ -343,13 +335,14 @@ export const accessibleTours: AccessibleTour[] = [
       "accessible great migration tanzania",
       "disability inclusive serengeti",
     ],
+    excluded: [
+      ]
   },
   {
     id: "acc-4",
     slug: "accessible-rwanda-gorilla-trekking",
     title: "Accessible Rwanda Gorilla Trekking",
-    description:
-      "Experience mountain gorillas in Rwanda with full accessibility considerations. Adapted vehicles, accessible accommodations, specially trained guides, accessible viewing platforms, shorter trek distances available, and complete medical support ensure everyone can witness these magnificent creatures.",
+    description: "Experience mountain gorillas in Rwanda with full accessibility considerations. Adapted vehicles, accessible accommodations, specially trained guides, accessible viewing platforms, shorter trek distances available, and complete medical support ensure everyone can witness these magnificent creatures.",
     shortDescription: "Accessible gorilla trekking in Rwanda",
     price: 2800,
     currency: "USD",
@@ -392,8 +385,7 @@ export const accessibleTours: AccessibleTour[] = [
       {
         day: 1,
         title: "Arrival in Kigali",
-        description:
-          "Arrive in Rwanda. Transfer to accessible hotel in Kigali. Evening orientation with accessibility team.",
+        description: "Arrive in Rwanda. Transfer to accessible hotel in Kigali. Evening orientation with accessibility team.",
       },
       {
         day: 2,
@@ -403,8 +395,7 @@ export const accessibleTours: AccessibleTour[] = [
       {
         day: 3,
         title: "Gorilla Trekking",
-        description:
-          "Modified gorilla trek with accessibility guide. Shorter or adapted paths as needed. Encounter mountain gorillas. Return to lodge.",
+        description: "Modified gorilla trek with accessibility guide. Shorter or adapted paths as needed. Encounter mountain gorillas. Return to lodge.",
       },
       {
         day: 4,
@@ -415,8 +406,7 @@ export const accessibleTours: AccessibleTour[] = [
     rating: 4.9,
     reviewCount: 35,
     metaTitle: "Accessible Rwanda Gorilla Trekking | Disability Friendly | Jae Travel",
-    metaDescription:
-      "Trek mountain gorillas in Rwanda with full accessibility. Wheelchair-accessible vehicles, adapted treks, trained guides, and medical support.",
+    metaDescription: "Trek mountain gorillas in Rwanda with full accessibility. Wheelchair-accessible vehicles, adapted treks, trained guides, and medical support.",
     keywords: [
       "accessible gorilla trekking rwanda",
       "wheelchair gorilla trek",
@@ -431,13 +421,13 @@ export const accessibleTours: AccessibleTour[] = [
       "barrier free gorilla experience",
       "inclusive rwanda tourism",
     ],
+    excluded: []
   },
   {
     id: "acc-5",
     slug: "accessible-uganda-bwindi-gorillas",
     title: "Accessible Uganda Bwindi Gorilla Experience",
-    description:
-      "Trek mountain gorillas in Uganda's Bwindi Impenetrable Forest with complete accessibility accommodations. Adapted vehicles, accessible lodges, modified trek options, trained accessibility guides, oxygen support available, and full medical staff ensure an unforgettable gorilla experience.",
+    description: "Trek mountain gorillas in Uganda's Bwindi Impenetrable Forest with complete accessibility accommodations. Adapted vehicles, accessible lodges, modified trek options, trained accessibility guides, oxygen support available, and full medical staff ensure an unforgettable gorilla experience.",
     shortDescription: "Accessible gorilla trekking in Uganda Bwindi Forest",
     price: 2650,
     currency: "USD",
@@ -485,14 +475,12 @@ export const accessibleTours: AccessibleTour[] = [
       {
         day: 2,
         title: "Gorilla Trekking Day",
-        description:
-          "Modified gorilla trek with accessibility guide. Multiple rest options. Encounter mountain gorillas in forest.",
+        description: "Modified gorilla trek with accessibility guide. Multiple rest options. Encounter mountain gorillas in forest.",
       },
       {
         day: 3,
         title: "Forest Exploration",
-        description:
-          "Shorter optional forest walk or lodge relaxation. Cultural activities brought to accessible areas.",
+        description: "Shorter optional forest walk or lodge relaxation. Cultural activities brought to accessible areas.",
       },
       {
         day: 4,
@@ -503,8 +491,7 @@ export const accessibleTours: AccessibleTour[] = [
     rating: 4.8,
     reviewCount: 32,
     metaTitle: "Accessible Uganda Bwindi Gorilla Trekking | Wheelchair Friendly | Jae Travel",
-    metaDescription:
-      "Trek mountain gorillas in Uganda's Bwindi forest with full accessibility. Adapted vehicles, lodges, and disability-trained guides.",
+    metaDescription: "Trek mountain gorillas in Uganda's Bwindi forest with full accessibility. Adapted vehicles, lodges, and disability-trained guides.",
     keywords: [
       "accessible uganda gorilla",
       "wheelchair bwindi trek",
@@ -518,13 +505,13 @@ export const accessibleTours: AccessibleTour[] = [
       "barrier free gorilla trekking",
       "disability inclusive uganda",
     ],
+    excluded: []
   },
   {
     id: "acc-6",
     slug: "east-africa-grand-accessible-safari",
     title: "East Africa Grand Accessible Safari",
-    description:
-      "The ultimate East African accessible safari across Kenya and Tanzania. Combines Maasai Mara, Serengeti, and Ngorongoro with premium accessible accommodations, wheelchair-adapted vehicles, trained disability guides, medical staff, and curated accessible experiences ensuring complete immersion.",
+    description: "The ultimate East African accessible safari across Kenya and Tanzania. Combines Maasai Mara, Serengeti, and Ngorongoro with premium accessible accommodations, wheelchair-adapted vehicles, trained disability guides, medical staff, and curated accessible experiences ensuring complete immersion.",
     shortDescription: "12-day grand accessible safari across Kenya and Tanzania",
     price: 5800,
     currency: "USD",
@@ -569,8 +556,7 @@ export const accessibleTours: AccessibleTour[] = [
       {
         day: 1,
         title: "Arrival in Nairobi",
-        description:
-          "Arrive in Nairobi. Transfer to premium accessible hotel. Orientation with entire accessibility team.",
+        description: "Arrive in Nairobi. Transfer to premium accessible hotel. Orientation with entire accessibility team.",
       },
       {
         day: 2,
@@ -631,8 +617,7 @@ export const accessibleTours: AccessibleTour[] = [
     rating: 4.9,
     reviewCount: 18,
     metaTitle: "East Africa Grand Accessible Safari 12 Days | Luxury Accessibility | Jae Travel",
-    metaDescription:
-      "Experience the ultimate accessible safari across Kenya and Tanzania. Premium accessible lodges, trained guides, and complete medical support for 12 days.",
+    metaDescription: "Experience the ultimate accessible safari across Kenya and Tanzania. Premium accessible lodges, trained guides, and complete medical support for 12 days.",
     keywords: [
       "grand accessible safari",
       "luxury disability safari",
@@ -645,6 +630,7 @@ export const accessibleTours: AccessibleTour[] = [
       "complete accessibility east africa",
       "inclusive multi-country safari",
     ],
+    excluded: []
   },
 ]
 
