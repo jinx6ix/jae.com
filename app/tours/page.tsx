@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import Image from "next/image"
 import { MapPin, Clock, Users, Camera, Tent, Star, Calendar, DollarSign, ChevronRight, Shield } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -81,7 +82,7 @@ export default function ToursPage() {
       <SchemaRenderer schema={generateBreadcrumbSchema(breadcrumbs)} />
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-orange-600 to-amber-500 text-white py-20 px-4">
+      <section className="bg-linear-to-r from-orange-600 to-amber-500 text-white py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">
             East African Safari Tours
@@ -156,63 +157,71 @@ export default function ToursPage() {
             Our most popular wildlife adventures — handpicked for unforgettable experiences.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredTours.map((tour) => (
-              <Card key={tour.id} className="overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="aspect-video bg-slate-200 relative">
-                  <img
-                    src={tour.image || "/placeholder.svg"}
-                    alt={`${tour.name} - ${tour.destinations.join(", ")} Safari Tour | Jae Travel`}
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <Badge className="bg-amber-600 text-white">Featured</Badge>
-                  </div>
-                  {tour.bestTime && (
-                    <div className="absolute top-4 right-4">
-                      <Badge variant="secondary" className="bg-white text-green-700">
-                        <Calendar className="w-3 h-3 mr-1" />
-                        {tour.bestTime}
-                      </Badge>
+            {featuredTours.map((tour) => {
+              const destinations = tour.destinations ?? []
+              const displayDestinations = destinations.slice(0, 2)
+              const extraCount = destinations.length - 2
+
+              return (
+                <Card key={tour.id} className="overflow-hidden hover:shadow-xl transition-shadow">
+                  <div className="aspect-video bg-slate-200 relative">
+                    <Image
+                      src={tour.image || "/placeholder.svg"}
+                      alt={`${tour.name} - ${destinations.join(", ")} Safari Tour | Jae Travel`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                      width={500}
+                      height={500}
+                    />
+                    <div className="absolute top-4 left-4">
+                      <Badge className="bg-amber-600 text-white">Featured</Badge>
                     </div>
-                  )}
-                </div>
-                <CardHeader>
-                  <CardTitle className="text-xl line-clamp-2">{tour.name}</CardTitle>
-                  <CardDescription className="flex items-center gap-1">
-                    <MapPin className="w-4 h-4" />
-                    {tour.destinations.slice(0, 2).join(" • ")}
-                    {tour.destinations.length > 2 && ` +${tour.destinations.length - 2} more`}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="flex items-center gap-1">
-                      <Clock className="w-4 h-4 text-slate-500" />
-                      {tour.duration}
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Users className="w-4 h-4 text-slate-500" />
-                      {tour.groupSize}
-                    </span>
+                    {tour.bestTime && (
+                      <div className="absolute top-4 right-4">
+                        <Badge variant="secondary" className="bg-white text-green-700">
+                          <Calendar className="w-3 h-3 mr-1" />
+                          {tour.bestTime}
+                        </Badge>
+                      </div>
+                    )}
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm text-slate-600">From</p>
-                      <p className="text-2xl font-bold text-amber-600">
-                        ${tour.priceFrom}
-                        <span className="text-sm font-normal text-slate-600"> / person</span>
-                      </p>
+                  <CardHeader>
+                    <CardTitle className="text-xl line-clamp-2">{tour.name}</CardTitle>
+                    <CardDescription className="flex items-center gap-1">
+                      <MapPin className="w-4 h-4" />
+                      {displayDestinations.join(" • ")}
+                      {extraCount > 0 && ` +${extraCount} more`}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-3">
+                    <div className="flex items-center justify-between text-sm">
+                      <span className="flex items-center gap-1">
+                        <Clock className="w-4 h-4 text-slate-500" />
+                        {tour.duration}
+                      </span>
+                      <span className="flex items-center gap-1">
+                        <Users className="w-4 h-4 text-slate-500" />
+                        {tour.groupSize}
+                      </span>
                     </div>
-                    <Link href={`/tours/${tour.slug}`}>
-                      <Button className="bg-amber-600 hover:bg-amber-700">
-                        View Tour
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-sm text-slate-600">From</p>
+                        <p className="text-2xl font-bold text-amber-600">
+                          ${tour.priceFrom}
+                          <span className="text-sm font-normal text-slate-600"> / person</span>
+                        </p>
+                      </div>
+                      <Link href={`/tours/${tour.slug}`}>
+                        <Button className="bg-amber-600 hover:bg-amber-700">
+                          View Tour
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -296,7 +305,7 @@ export default function ToursPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-amber-600 to-orange-600 text-white">
+      <section className="py-20 px-4 bg-linear-to-r from-amber-600 to-orange-600 text-white">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready for Your African Safari Adventure?
