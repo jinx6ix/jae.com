@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
+import Image from "next/image"
 import { SchemaRenderer } from "@/components/schema-renderer"
 import { generateBreadcrumbSchema, generateFAQSchema, generateOrganizationSchema } from "@/lib/seo-utils"
 
@@ -111,7 +112,7 @@ export default function Home() {
       <SchemaRenderer schema={organizationSchema} />
 
       {/* Hero Section - Rich Content for SEO */}
-      <section className="relative bg-gradient-to-r from-slate-900 to-slate-800 text-white py-24 px-4 overflow-hidden">
+      <section className="relative bg-linear-to-r from-slate-900 to-slate-800 text-white py-24 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-black opacity-20"></div>
         <div className="max-w-7xl mx-auto text-center relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
@@ -181,11 +182,13 @@ export default function Home() {
               <Link key={idx} href={tour.link}>
                 <Card className="hover:shadow-xl transition-all duration-300 h-full cursor-pointer group border-0 shadow-lg">
                   <div className="aspect-video bg-slate-200 rounded-t-lg overflow-hidden relative">
-                    <img
+                    <Image
                       src={tour.image || "/placeholder.svg"}
                       alt={`${tour.title} - ${tour.country} Safari Tour | Jae Travel Expeditions`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading={idx < 2 ? "eager" : "lazy"}
+                      width={500}
+                      height={500}
                     />
                     <div className="absolute top-4 right-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                       {tour.duration}
@@ -466,7 +469,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section - Final Conversion */}
-      <section className="py-20 px-4 bg-gradient-to-r from-amber-600 to-amber-700 text-white">
+      <section className="py-20 px-4 bg-linear-to-r from-amber-600 to-amber-700 text-white">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Limited Time: Save 10% on 2026 East Africa Safari Bookings

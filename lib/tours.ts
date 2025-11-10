@@ -7,11 +7,11 @@ export interface ItineraryDay {
 }
 
 export interface Tour {
-  featured: boolean
-  name: string
-  destinations: string[]
-  bestTime: string[]
-  priceFrom: number
+  featured?: boolean
+  name?: string
+  destinations?: string[]
+  bestTime?: string[]
+  priceFrom?: number
   id: string
   slug: string
   title: string

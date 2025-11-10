@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
 import { SchemaRenderer } from "@/components/schema-renderer"
 import {
   generateBreadcrumbSchema,
@@ -257,11 +258,13 @@ export default function AccessibleToursPage() {
               <Link key={tour.id} href={`/disabilities-accessible-tours/${tour.slug}`}>
                 <Card className="h-full hover:shadow-xl transition-all duration-300 cursor-pointer group border-0 shadow-md">
                   <div className="relative aspect-video bg-slate-200 rounded-t-lg overflow-hidden">
-                    <img
+                    <Image
                       src={tour.image || "/placeholder.svg"}
                       alt={`${tour.title} - Wheelchair Accessible Safari in ${tour.country} | Jae Travel`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                       loading={idx < 3 ? "eager" : "lazy"}
+                      width={400}
+                      height={300}
                     />
                     <div className="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full flex items-center gap-1 text-sm font-bold">
                       <Accessibility size={16} />
@@ -376,19 +379,19 @@ export default function AccessibleToursPage() {
               </h3>
               <ul className="space-y-4 text-slate-700">
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 shrink-0" />
                   <div>ADA-compliant vehicle modifications</div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 shrink-0" />
                   <div>WCAG 2.1 website accessibility</div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 shrink-0" />
                   <div>Roll-in showers with seats & grab bars</div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
+                  <CheckCircle className="w-6 h-6 text-green-600 mt-1 shrink-0" />
                   <div>Emergency evacuation chairs in all lodges</div>
                 </li>
               </ul>
@@ -518,7 +521,7 @@ export default function AccessibleToursPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+      <section className="py-20 px-4 bg-linear-to-r from-blue-600 to-blue-700 text-white">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Limited Offer: Free Accessibility Consultation + 10% Off
