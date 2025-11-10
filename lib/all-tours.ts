@@ -38,7 +38,7 @@ export interface Tour {
   featured?: boolean
   name?: string
   destinations?: string[]
-  bestTime?: string
+  bestTime?: string []
   priceFrom?: number
 }
 
