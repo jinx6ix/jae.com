@@ -1,7 +1,14 @@
+// components/navigation.tsx
+"use client"
+
+import { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Menu, X } from "lucide-react"
 
 export function Navigation() {
+  const [isOpen, setIsOpen] = useState(false)
+
   const navItems = [
     { label: "Home", href: "/" },
     { label: "Tours", href: "/tours" },
@@ -22,11 +29,14 @@ export function Navigation() {
             Jae Travel
           </Link>
 
-          {/* Navigation Links */}
+          {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Link key={item.href} href={item.href}>
-                <Button variant="ghost" className="text-white hover:bg-orange-600 hover:text-white transition-colors">
+                <Button
+                  variant="ghost"
+                  className="text-white hover:bg-orange-600 hover:text-white transition-colors px-3 py-2"
+                >
                   {item.label}
                 </Button>
               </Link>
@@ -34,23 +44,39 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <details className="md:hidden group">
-            <summary className="cursor-pointer list-none">
-              <Button variant="ghost" className="text-white hover:bg-orange-600">
-                ☰ Menu
-              </Button>
-            </summary>
-            <div className="absolute right-0 top-16 bg-orange-600 w-48 rounded-lg shadow-lg">
+          <button
+            title="Menu"
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-md hover:bg-orange-600 transition-colors"
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
+          >
+            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
+
+        {/* Mobile Dropdown */}
+        {isOpen && (
+          <div className="md:hidden absolute left-0 right-0 bg-orange-600 shadow-lg border-t border-orange-700">
+            <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
-                <Link key={item.href} href={item.href} className="block">
-                  <Button variant="ghost" className="w-full justify-start text-white hover:bg-orange-700 rounded-none">
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setIsOpen(false)} // Close on click
+                  className="block"
+                >
+                  <Button
+                    variant="ghost"
+                    className="w-full justify-start text-white hover:bg-orange-700 px-3 py-2 text-base font-medium"
+                  >
                     {item.label}
                   </Button>
                 </Link>
               ))}
             </div>
-          </details>
-        </div>
+          </div>
+        )}
       </div>
     </nav>
   )
