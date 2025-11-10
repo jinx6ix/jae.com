@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { Search, Tag, BookOpen, Calendar, Clock, User, } from "lucide-react"
 import type { BlogPost } from "@/lib/blog-posts"
+import Image from "next/image"
 
 interface BlogClientProps {
   initialPosts: BlogPost[]
@@ -135,11 +136,13 @@ export default function BlogClient({ initialPosts }: BlogClientProps) {
                 <Link key={post.id} href={`/blog/${post.slug}`}>
                   <Card className="h-full hover:shadow-xl transition-all duration-300 cursor-pointer border-slate-200 group">
                     <div className="aspect-video bg-slate-200 relative overflow-hidden">
-                      <img
+                      <Image
                         src={post.image || "/placeholder.svg?height=300&width=500"}
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
+                        width={500}
+                        height={300}
                       />
                     </div>
                     <CardHeader>

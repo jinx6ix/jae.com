@@ -7,6 +7,7 @@ import { generateBreadcrumbSchema } from "@/lib/seo-utils"
 import { getAllVehicles } from "@/lib/vehicles"
 import Link from "next/link"
 import { Truck, Users, MapPin, Zap, Shield, Clock, Camera, Tent, Accessibility, Car } from "lucide-react"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "Safari Vehicle Rental | Land Cruiser, Prado, Camping Vehicles | Jae Travel",
@@ -147,11 +148,13 @@ export default function VehicleHirePage() {
             {vehicles.map((vehicle) => (
               <Card key={vehicle.id} className="overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="aspect-video bg-slate-200 overflow-hidden relative">
-                  <img
+                  <Image
                     src={vehicle.image || "/placeholder.svg"}
                     alt={`${vehicle.name} - ${vehicle.description} | Jae Travel Safari Vehicle Rental`}
                     className="w-full h-full object-cover"
                     loading="lazy"
+                    width={600}
+                    height={400}
                   />
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-amber-600 text-white">From ${vehicle.pricePerDay}/day</Badge>

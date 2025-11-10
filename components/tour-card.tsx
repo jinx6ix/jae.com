@@ -4,6 +4,7 @@ import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import type { Tour } from "@/lib/tours" // Fix import path
 import { Star } from "lucide-react"
+import Image from "next/image"
 
 interface TourCardProps {
   tour: Tour
@@ -19,10 +20,12 @@ export function TourCard({ tour, variant = "default" }: TourCardProps) {
     <Link href={`/tours/${tour.slug}`}>
       <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer overflow-hidden">
         <div className="relative aspect-video bg-slate-200 overflow-hidden">
-          <img
+          <Image
             src={tour.image || "/placeholder.svg"}
             alt={tour.title}
             className="w-full h-full object-cover hover:scale-105 transition-transform"
+            width={500}
+            height={500}
           />
           {tour.isOnOffer && discountPercentage > 0 && (
             <div className="absolute top-3 right-3 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">

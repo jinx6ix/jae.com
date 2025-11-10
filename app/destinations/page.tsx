@@ -27,6 +27,7 @@ import {
   Phone,
   Mail,
 } from "lucide-react"
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title:
@@ -175,11 +176,13 @@ export default function DestinationsPage() {
                 className="overflow-hidden hover:shadow-xl transition-all duration-300 group border-0 shadow-lg"
               >
                 <div className="relative aspect-video bg-slate-200 overflow-hidden">
-                  <img
+                  <Image
                     src={destination.image || "/placeholder.svg"}
                     alt={`${destination.name} Safari Destination - ${destination.country} | Jae Travel`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                     loading={idx < 2 ? "eager" : "lazy"}
+                    width={600}
+                    height={400}
                   />
                   <div className="absolute top-4 left-4 bg-amber-600 text-white px-3 py-1 rounded-full text-sm font-bold flex items-center gap-1">
                     <MapPin size={16} />

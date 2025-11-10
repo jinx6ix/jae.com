@@ -36,7 +36,7 @@ export default function Home() {
       duration: "5 Days / 4 Nights",
       country: "Kenya",
       link: "/tours/masai-mara-luxury-safari",
-      image: "/masai-mara-safari-elephants.jpg",
+      image: "/4-Days-Masai-Mara-Wildebeest-safari.jpg",
       highlights: ["Great Migration", "Big Five", "Luxury Tented Camp", "Hot Air Balloon"],
     },
     {
@@ -46,7 +46,7 @@ export default function Home() {
       duration: "7 Days / 6 Nights",
       country: "Tanzania",
       link: "/tours/kilimanjaro-climbing-expedition",
-      image: "/mount-kilimanjaro-snow-peak.jpg",
+      image: "/kilimanjaro-moutain-climbing.jpg",
       highlights: ["Uhuru Peak 5,895m", "98% Success Rate", "All Meals Included", "Professional Guides"],
     },
     {
@@ -56,7 +56,7 @@ export default function Home() {
       duration: "3 Days / 2 Nights",
       country: "Rwanda",
       link: "/tours/gorilla-trekking-experience",
-      image: "/mountain-gorillas-rwanda-volcanoes.jpg",
+      image: "/rwanda-mountain-gorillas.jpg",
       highlights: ["1-Hour with Gorillas", "Gorilla Permit Included", "Luxury Lodge", "Expert Trackers"],
     },
     {
@@ -66,7 +66,7 @@ export default function Home() {
       duration: "4 Days / 3 Nights",
       country: "Uganda",
       link: "/tours/bwindi-gorilla-trekking",
-      image: "/bwindi-forest-uganda-gorillas.jpg",
+      image: "/bwindi-forest-uganda-gorilla-safaris.jpg",
       highlights: ["2 Trekking Permits", "90% Success Rate", "Eco-Luxury Camp", "Bird Watching"],
     },
   ]
