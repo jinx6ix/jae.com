@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /tours
+Allow: /destinations
+Allow: /blog
+Allow: /vehicle-hire
+Allow: /disabilities-accessible-tours
+Disallow: /admin
+Disallow: /api/internal
+Disallow: /booking/confirm
+Disallow: /*.json$
+
+Sitemap: https://jaetravel.com/sitemap.xml
