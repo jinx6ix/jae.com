@@ -2,6 +2,7 @@
 import { getDestinationBySlug, getAllDestinations } from "@/lib/destinations"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -130,11 +131,13 @@ export default async function DestinationPage({
 
       {/* Hero Section - Full Width, Immersive */}
       <section className="relative h-screen min-h-[600px] bg-slate-200 overflow-hidden">
-        <img
+        <Image
           src={destination.image || "/placeholder.svg"}
           alt={`${destination.name} Safari Destination - Jae Travel`}
           className="absolute inset-0 w-full h-full object-cover"
           loading="eager"
+          width={1920}
+          height={1080}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8 text-white">

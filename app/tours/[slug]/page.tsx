@@ -2,6 +2,7 @@
 import { tours } from "@/lib/tours"
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { SchemaRenderer } from "@/components/schema-renderer"
@@ -88,11 +89,13 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
 
       {/* Hero Section */}
       <section className="relative h-96 md:h-screen max-h-96 md:max-h-screen overflow-hidden">
-        <img
+        <Image
           src={tour.image || "/placeholder.svg?height=800&width=1600"}
           alt={`${tour.title} - Safari in ${tour.country} | Jae Travel`}
           className="w-full h-full object-cover"
           loading="eager"
+          width={1600}
+          height={800}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
         <div className="absolute bottom-8 left-8 text-white max-w-3xl">
@@ -307,11 +310,13 @@ export default async function TourPage({ params }: { params: Promise<{ slug: str
                 <Link key={similarTour.id} href={`/tours/${similarTour.slug}`}>
                   <Card className="h-full hover:shadow-xl transition-all duration-300 cursor-pointer border-orange-100 group">
                     <div className="aspect-video bg-slate-200 overflow-hidden">
-                      <img
+                      <Image
                         src={similarTour.image || "/placeholder.svg?height=300&width=600"}
                         alt={`${similarTour.title} - ${similarTour.country} Safari`}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
+                        width={600}
+                        height={300}
                       />
                     </div>
                     <CardHeader>

@@ -33,6 +33,13 @@ export interface Tour {
   isOnOffer?: boolean
   bestFor?: string[]
   bookingUrl: string
+
+  // 👇 Add these to fix the type mismatch
+  featured?: boolean
+  name?: string
+  destinations?: string[]
+  bestTime?: string
+  priceFrom?: number
 }
 
 export const tours: Tour[] = [
