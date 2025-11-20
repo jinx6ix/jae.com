@@ -37,12 +37,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "IGxEnPG73ZqCfKPuOdpjfM_HNDfuM03gWG9AUYOu74U",
-    yandex: "b585127e41b6a92f",
-    yahoo: "750BAD767F0FB4E4100952EBD7883CEE",
-    // bing removed — not supported in Next.js Metadata
-  },
+
   alternates: {
     canonical: "https://jaetravel.com",
     languages: {
@@ -169,22 +164,7 @@ export default function RootLayout({
         <link rel="preload" href="/fonts/inter-variable-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/hero-bg.jpg" as="image" />
 
-        {/* Google Analytics - Fixed with next/script */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-Q6Y2Y3PSXH"
-          strategy="afterInteractive"
-        />
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-Q6Y2Y3PSXH', { 
-              page_path: window.location.pathname,
-              transport_type: 'beacon'
-            });
-          `}
-        </Script>
+
       </head>
 
       <body className="font-sans antialiased bg-white text-slate-900">
