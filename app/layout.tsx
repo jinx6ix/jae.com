@@ -7,7 +7,7 @@ import { SchemaRenderer } from "@/components/schema-renderer"
 import { generateOrganizationSchema } from "@/lib/seo-utils"
 import "./globals.css"
 import { Analytics } from "@vercel/analytics/react"
-import Script from "next/script"
+
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://jaetravel.com"),
